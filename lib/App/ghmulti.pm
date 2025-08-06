@@ -238,7 +238,7 @@ or
 
 =head1 DESCRIPTION
 
-Please read the documentation in the L<ghmulti> program. for more information
+Please read the documentation in the L<ghmulti> program for more information.
 
 B<Note>: this module uses the B<git> command line tool, so B<git> must be
 installed and available via C<PATH>.

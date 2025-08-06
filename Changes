@@ -1,5 +1,9 @@
 Revision history for App-ghmulti
 
+x.y.z   YYYY/MM/DD
+
+      - POD: Fixed typo.
+
 0.02    2025/08/06
 
       - Minor change in POD.
