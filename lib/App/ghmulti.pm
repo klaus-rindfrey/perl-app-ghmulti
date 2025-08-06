@@ -16,7 +16,7 @@ $Getopt::Std::STANDARD_HELP_VERSION = 1;
 
 use Pod::Usage;
 
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 
 
 sub run {
@@ -219,7 +219,7 @@ App::ghmulti - Helps when using multiple Github accounts with SSH keys.
 
 =head1 VERSION
 
-Version 0.01
+Version 0.02
 
 
 =head1 SYNOPSIS
@@ -253,6 +253,7 @@ automatically be notified of progress on your bug as I make changes.
 
 =head1 SEE ALSO
 
+L<ghmulti>,
 L<Git::RemoteURL::Parse>,
 L<GitHub::Config::SSH::UserData>
 
