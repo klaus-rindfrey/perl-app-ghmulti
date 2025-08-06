@@ -214,7 +214,7 @@ __END__
 
 =head1 NAME
 
-App::ghmulti - Helps when using multiple Github accounts with SSH keys.
+App::ghmulti - Helps when using multiple Github accounts with SSH keys
 
 
 =head1 VERSION
