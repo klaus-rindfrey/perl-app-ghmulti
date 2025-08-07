@@ -8,7 +8,7 @@ use autodie;
 
 my $The_Module = 'App::ghmulti';
 my $PM_File = catfile('lib', split(/::/, "$The_Module.pm"));
-my $Git_URL = 'perl-' . join('-', split(/::/, lc($The_Module)));
+my $Git_URL = 'https://github.com/klaus-rindfrey/perl-' . join('-', split(/::/, lc($The_Module)));
 
 my $Version;
 open(my $h, '<', $PM_File);
@@ -62,7 +62,6 @@ my %WriteMakefileArgs = (
         provides => { $The_Module => {file => $PM_File,
                                       version => $Version
                                      },
-                      'ghmulti'   => {file => 'script/ghmulti', version => $Version}
                     },
     },
     dist  => { COMPRESS => 'gzip -9f', SUFFIX => 'gz', },
