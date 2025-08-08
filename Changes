@@ -1,5 +1,9 @@
 Revision history for App-ghmulti
 
+x.yx   YYYY/MM/DD
+
+      - Reformatted Makefile.PL
+
 0.03   2025/08/07
 
       - POD: Fixed typo.
