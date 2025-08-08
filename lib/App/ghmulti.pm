@@ -16,7 +16,7 @@ $Getopt::Std::STANDARD_HELP_VERSION = 1;
 
 use Pod::Usage;
 
-our $VERSION = '0.03';
+our $VERSION = '0.04';
 
 
 sub run {
@@ -219,7 +219,7 @@ App::ghmulti - Helps when using multiple Github accounts with SSH keys
 
 =head1 VERSION
 
-Version 0.03
+Version 0.04
 
 
 =head1 SYNOPSIS
