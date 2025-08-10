@@ -24,11 +24,11 @@ die("VERSION not found in $PM_File") if !$Version;
 
 my %WriteMakefileArgs =
   (
-   NAME               => 'App::ghmulti',
+   NAME               => $The_Module,
    AUTHOR             => q{Klaus Rindfrey <klausrin@cpan.org.eu>},
-   VERSION_FROM       => 'lib/App/ghmulti.pm',
-   ABSTRACT_FROM      => 'lib/App/ghmulti.pm',
-   EXE_FILES          => ['script/ghmulti'],
+   VERSION_FROM       => $PM_File,
+   ABSTRACT_FROM      => $PM_File,
+   EXE_FILES          => [catfile('script', (split(/::/, $The_Module))[1])],
    LICENSE            => 'perl_5',
    MIN_PERL_VERSION   => '5.010',
    CONFIGURE_REQUIRES => {
