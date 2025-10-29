@@ -2,6 +2,7 @@ Revision history for App-ghmulti
 
 x.yz   YYYY/MM/DD
 
+      - Reworked Makefile.PL
       - Improved POD.
 
 0.04   2025/08/08
