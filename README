@@ -2,7 +2,7 @@ NAME
     App::ghmulti - Helps when using multiple Github accounts with SSH keys
 
 VERSION
-    Version 0.04
+    Version 0.05
 
 SYNOPSIS
         use App::ghmulti;
