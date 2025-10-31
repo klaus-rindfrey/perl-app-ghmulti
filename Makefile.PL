@@ -89,9 +89,6 @@ my %WriteMakefileArgs =
    clean => { FILES => join('-', split(/::/, $The_Module)) . '-*' },
   );
 
-
-
-
 if ($meta_merge_supported) {
   $WriteMakefileArgs{META_MERGE} =
     {
@@ -123,11 +120,6 @@ unless (eval { ExtUtils::MakeMaker->VERSION('6.64'); 1 }) {
   @{$WriteMakefileArgs{PREREQ_PM}}{keys %$test_requires} = values %$test_requires;
 }
 
-# unless (eval { ExtUtils::MakeMaker->VERSION('6.55_03'); 1 }) {
-#   my $build_requires = delete $WriteMakefileArgs{BUILD_REQUIRES} || {};
-#   @{$WriteMakefileArgs{PREREQ_PM}}{keys %$build_requires} = values %$build_requires;
-# }
-
 
 delete $WriteMakefileArgs{CONFIGURE_REQUIRES}
   unless eval { ExtUtils::MakeMaker->VERSION('6.52'); 1 };
@@ -135,8 +127,6 @@ delete $WriteMakefileArgs{MIN_PERL_VERSION}
   unless eval { ExtUtils::MakeMaker->VERSION('6.48'); 1 };
 delete $WriteMakefileArgs{META_MERGE}
   unless eval { ExtUtils::MakeMaker->VERSION('6.46'); 1 };
-delete $WriteMakefileArgs{LICENSE}
-  unless eval { ExtUtils::MakeMaker->VERSION('6.31'); 1 };
 
 WriteMakefile(%WriteMakefileArgs);
 
@@ -154,7 +144,6 @@ README: $PM_File
 
 all :: README
 
-#manifest : README
 
 policy-files:
 \tdist-policyfiles -m $The_Module -l klaus-rindfrey -p perl- -u \\
