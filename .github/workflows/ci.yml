@@ -60,7 +60,6 @@ jobs:
         run: |
           perl Makefile.PL
           make
-          cpanm --notest --installdeps --with-develop --with-test --verbose .
           prove -lr t
 
       - name: Author tests

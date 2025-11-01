@@ -148,7 +148,7 @@ README.md: $PM_File
 README: $PM_File
 \tpod2text $PM_File > README
 
-all :: readme_files
+## all :: readme_files
 
 distdir : readme_files
 
