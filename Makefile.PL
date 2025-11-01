@@ -21,6 +21,8 @@ foreach my $line (<$h>) {
 close($h);
 die("VERSION not found in $PM_File") if !$Version;
 
+my $in_git_repo = -d '.git';
+
 my $meta_merge_supported = eval { ExtUtils::MakeMaker->VERSION(6.46) };
 
 # PREREQ_PM
@@ -51,7 +53,7 @@ my %prereq_build = (
                     'warnings'              => '0',
                     'ExtUtils::MakeMaker'   => '6.42',
                     'File::Spec::Functions' => '0',
-                    'Pod::Markdown'         => '3.200',
+                    $in_git_repo ? ('Pod::Markdown' => '3.200') : (),
                    );
 
 # Added to %test_requires if needed
@@ -133,11 +135,12 @@ WriteMakefile(%WriteMakefileArgs);
 
 
 sub MY::postamble {
+  my @readme_files = ('README', $in_git_repo ? ('README.md') : ());
   return "
 clean_all: clean
 \trm -f MANIFEST README
 
-readme_files: README README.md
+readme_files: @readme_files
 
 README.md: $PM_File
 \tpod2markdown $PM_File > README.md
@@ -145,7 +148,7 @@ README.md: $PM_File
 README: $PM_File
 \tpod2text $PM_File > README
 
-#all :: readme_files
+## all :: readme_files
 
 distdir : readme_files
 
