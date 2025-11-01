@@ -51,6 +51,7 @@ my %prereq_build = (
                     'warnings'              => '0',
                     'ExtUtils::MakeMaker'   => '6.42',
                     'File::Spec::Functions' => '0',
+                    'Pod::Markdown'         => '3.200',
                    );
 
 # Added to %test_requires if needed
@@ -136,13 +137,19 @@ sub MY::postamble {
 clean_all: clean
 \trm -f MANIFEST README
 
+readme_files: README README.md
+
 README.md: $PM_File
 \tpod2markdown $PM_File > README.md
 
 README: $PM_File
 \tpod2text $PM_File > README
 
-all :: README
+#all :: readme_files
+
+distdir : readme_files
+
+manifest : readme_files
 
 
 policy-files:
