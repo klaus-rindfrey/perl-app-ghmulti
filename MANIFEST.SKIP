@@ -14,6 +14,8 @@
 \bApp-ghmulti-\d+(?:\.\d+)+\/
 ^App-ghmulti-\d+(?:\.\d+)+\.tar\.gz$
 
+# We generate a README file for the distribution, so README.md is not needed.
+^README\.md$
 
 # Temp, old and emacs backup files.
 ~$
