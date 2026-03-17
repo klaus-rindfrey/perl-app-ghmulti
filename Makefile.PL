@@ -71,8 +71,8 @@ my %authortest_requires = (
                            'Test::Spelling'        => '0.25',
                           );
 
-if ($ENV{TEST_AUTHOR}) {
-  print "Author tests enabled (TEST_AUTHOR=1)\n";
+if ($ENV{AUTHOR_TESTING}) {
+  print "Author tests enabled (AUTHOR_TESTING=1)\n";
   %test_requires = (%test_requires,  %authortest_requires);
 }
 
@@ -135,12 +135,9 @@ WriteMakefile(%WriteMakefileArgs);
 
 
 sub MY::postamble {
-  my @readme_files = ('README', $in_git_repo ? ('README.md') : ());
   return "
 clean_all: clean
 \trm -f MANIFEST README
-
-readme_files: @readme_files
 
 README.md: $PM_File
 \tpod2markdown $PM_File > README.md
@@ -148,12 +145,7 @@ README.md: $PM_File
 README: $PM_File
 \tpod2text $PM_File > README
 
-## all :: readme_files
-
-distdir : readme_files
-
-manifest : readme_files
-
+all :: README
 
 policy-files:
 \tdist-policyfiles -m $The_Module -l klaus-rindfrey -p perl- -u \\
