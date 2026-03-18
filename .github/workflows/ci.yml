@@ -52,7 +52,7 @@ jobs:
       - name: Install MakeMaker and dependencies
         run: |
           cpanm --notest ExtUtils::MakeMaker
-          cpanm --notest --installdeps --with-develop --with-test --verbose .
+          cpanm --notest --installdeps --with-develop --verbose .
       - name: Show content of log files on Linux
         if: failure() && startsWith(matrix.runner, 'ubuntu-')
         run: cat /home/runner/.cpanm/work/*/build.log
@@ -71,7 +71,7 @@ jobs:
           make
           prove -lr t
 
-      - name: Author tests
+      - name: Author and release tests
         if: matrix.runner == 'ubuntu-latest' && matrix.perl == '5.40'
         uses: klaus-rindfrey/perltest-release-and-author-tests@main
         with:
