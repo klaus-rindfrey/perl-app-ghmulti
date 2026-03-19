@@ -59,8 +59,7 @@ if ($ENV{AUTHOR_TESTING}) {
                              'File::chdir'           => '0.1011',
                              'Pod::Wordlist'         => '1.27',
                              'Test::Kwalitee'        => '1.26',
-                             'Test::More'            => '0',
-                             'Test::Pod'             => '1.51',
+                             'Test::Pod'             => '1.22',
                              'Test::Spelling'        => '0.25',
                             }
           );
@@ -70,7 +69,7 @@ if ($ENV{RELEASE_TESTING}) {
   print "Release tests enabled (RELEASE_TESTING is true)\n";
   add_mods(\%test_requires, {
                              'Test::Changes::Strict::Simple' => '0.05',
-                             'Test::CheckManifest'           => '1.43',
+                             'Test::CheckManifest'           => '0.9',
                              'Test::CPAN::Meta'              => '0.25',
                              'Test::CPAN::Meta::JSON'        => '0.16',
                             }
@@ -135,6 +134,8 @@ delete $WriteMakefileArgs{META_MERGE}
 WriteMakefile(%WriteMakefileArgs);
 
 
+
+#--------------------------------------------------------------------------------------------------
 
 sub add_mods {
   my ($a, $b) = @_;
