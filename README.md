@@ -4,7 +4,7 @@ App::ghmulti - Helps when using multiple Github accounts with SSH keys
 
 # VERSION
 
-Version 0.06
+Version 0.07
 
 # SYNOPSIS
 
@@ -28,9 +28,12 @@ installed and available via `PATH`.
 
 # BUGS
 
-Please report any bugs or feature requests to `bug-app-ghmulti at rt.cpan.org`, or through
-the web interface at [https://rt.cpan.org/NoAuth/ReportBug.html?Queue=App-ghmulti](https://rt.cpan.org/NoAuth/ReportBug.html?Queue=App-ghmulti).  I will be notified, and then you'll
-automatically be notified of progress on your bug as I make changes.
+Please report any bugs or feature requests to `bug-app-ghmulti at
+rt.cpan.org`, or through the web interface at
+[https://rt.cpan.org/NoAuth/ReportBug.html?Queue=App-ghmulti](https://rt.cpan.org/NoAuth/ReportBug.html?Queue=App-ghmulti) or create a
+[GitHub Issue](https://github.com/klaus-rindfrey/perl-app-ghmulti/issues).  I
+will be notified, and then you'll automatically be notified of progress on
+your bug as I make changes.
 
 # SEE ALSO
 
